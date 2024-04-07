@@ -1,0 +1,38 @@
+#Install Python and pip
+sudo apt-get update
+
+sudo apt-get install python3-distutils
+sudo apt-get install python3-apt
+
+sudo apt-get install wget
+wget https://bootstrap.pypa.io/get-pip.py
+
+
+sudo rm /usr/lib/python3.11/EXTERNALLY-MANAGED
+sudo python3 get-pip.py
+
+
+#Installing Pandas
+sudo pip3 install pandas
+
+#Installing mage
+sudo pip3 install mage-ai
+
+##When running the following command:
+mage start uber_de_project   
+##if you get the following error:
+ImportError: Dask dataframe requirements are not installed.
+
+## then run the command shown below:
+pip install dask[dataframe]
+
+##Then when you run this command again: 
+mage start uber_de_project
+## and if you get this error:
+ImportError: Bad git executable.
+  
+#then run this command:
+export GIT_PYTHON_REFRESH=quiet
+
+  
+mage start uber_de_project
